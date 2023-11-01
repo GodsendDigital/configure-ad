@@ -37,9 +37,8 @@ First thing I do is login the Azure Portal and create two virtual machines. Name
 <p>
 <img src="https://i.imgur.com/Sr70LQR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
-To create a hole in the firewall, I must login into DC-1 via RDP. So, I create another RDP and log in. Once I'm in, I bring up the Server Manager and WF.MSC(Windows Firewall). I go to Inbound Rules then click on protocol. Plenty of options will show up, scroll down and click CORE NETWORKING-DESTINATION UNREACHABLE ECHO REQUEST and enable rule. Note: "I make sure it is IPv4, 
 <p>
-
+To create a hole in the firewall, I must login into DC-1 via RDP. So, I create another RDP and log in. Once I'm in, I bring up the Server Manager and WF.MSC(Windows Firewall). I go to Inbound Rules then click on protocol. Plenty of options will show up, scroll down and click CORE NETWORKING-DESTINATION UNREACHABLE ECHO REQUEST and enable rule. Note: "I make sure it is IPv4, Internet Protocol version 4. Now switch the Client-1 RDP and start the ping over. It should work because a hole was created in the firewall to allow ICMP traffic. Once its confirmed, I start the process to download Active Directory.
 </p>
 <br />
 
@@ -47,7 +46,7 @@ To create a hole in the firewall, I must login into DC-1 via RDP. So, I create a
 <img src="https://i.imgur.com/YXtkSuT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+I must install Active Directory on the DC-1 VM. Once I'm inside DC-1, I pull up the server manager and then go to roles and features and begin the installation of Active Directory Domain Services. 
 </p>
 <br />
 
