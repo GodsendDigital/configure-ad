@@ -21,8 +21,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 - Create 2 Virtual Machines and log into RDP
 - Create a hole in the firewall in DC-1
-- Step 3
-- Step 4
+- Active Directory Installation
+- Create Domain Users
 
 <h2>Deployment and Configuration Steps</h2>
 
