@@ -46,7 +46,7 @@ To create a hole in the firewall, I must login into DC-1 via RDP. So, I create a
 <img src="https://i.imgur.com/YXtkSuT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-I must install Active Directory on the DC-1 VM. Once I'm inside DC-1, I pull up the server manager and then go to roles and features and begin the installation of Active Directory Domain Services. 
+I must install Active Directory on the DC-1 VM. Once I'm inside DC-1, I pull up the server manager and then go to roles and features and begin the installation of Active Directory Domain Services. After the install is complete, I proceed to promote this server to a domain server, which direct me to a menu to give the server a domain name. I name it Jumpman23domain.com(Huge NBA Fan lol) The NetBios name will be Jumpman23domain. 
 </p>
 <br />
 
@@ -54,7 +54,7 @@ I must install Active Directory on the DC-1 VM. Once I'm inside DC-1, I pull up 
 <img src="https://i.imgur.com/VNaoNUY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Now after the Active Directory is installed and has a domain name. Client-1 DNS(Domain Name Service) must have be the same as DC-1 IP address because when Client-1 attempts to join the domain it will search the internet for the domain name but when the DNS has the same IP as DC-1, it will already be on the network. In order to change the DNS, I must go into the Azure Portal and copy DC-1 NIC Private IP then go into Client-1 DNS Servers Setting and add a custom address and input it. Restart the Client-1 VM.Then I log back into Client-1 RDP, and go to system settings and allow "Domain Users" to access this VM.
 </p>
 <br />
 
@@ -63,6 +63,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   <img src="https://i.imgur.com/0zxv4od.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+After all the steps above are done right, I log back onto DC-1 and bring up Active Directory Users and Computers. I begin to make Organizational Units titled, _EMPLOYEES and _ADMINS. I make a user in the _ADMINS unit, the user name is JUMP MAN and the login is Jump.man@jumpman23domain. I also make users in the _EMPLOYEES folder, and Admins and Employee will have different access clearance. Employees and Admins can log onto the Client-1 RDP as shown above.
 </p>
 <br />
